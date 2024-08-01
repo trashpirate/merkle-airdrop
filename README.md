@@ -66,6 +66,19 @@ $ anvil --help
 $ cast --help
 ```
 
+## Interact with contract
+
+### Call getMessageHash
+```shell
+ast call 0x0165878A594ca255338adfa4d48449f69242Eb8F "getMessageHash(address,uint256)" 0xf39Fd6e51aa
+d88F6F4ce6aB8827279cffFb92266 2500000000000000000 --rpc-url http://127.0.0.1:8545
+```
+
+### Sign message
+```shell
+cast wallet sign --no-hash 0x0f620ff0846c9d7b31a149681ca57375bf981b10b6028b5e146bc50d439ceee9 --priv
+ate-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
+```
 
 Get signer:
 
@@ -144,3 +157,4 @@ https://www.cyfrin.io/blog/elliptic-curve-digital-signature-algorithm-and-signat
     - custom signature
     - pay master parameters (who is paying for fee)
 - 0xff Priority transactions: transactios from L1 to L2
+
