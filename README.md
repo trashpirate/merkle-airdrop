@@ -1,11 +1,11 @@
 
 
-# MERKLE AIRDROP
+# MERKLE AIRDROPsh
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?style=for-the-badge)
 ![Forge](https://img.shields.io/badge/forge-v0.2.0-blue.svg?style=for-the-badge)
 ![Solc](https://img.shields.io/badge/solc-v0.8.20-blue.svg?style=for-the-badge)
-[![License: MIT](https://img.shields.io/github/license/trashpirate/merkle-airdrop.svg?style=for-the-badge)](https://github.com/trashpirate/merkle-airdrop/blob/master/LICENSE)
+![GitHub License](https://img.shields.io/github/license/trashpirate/merkle-airdrop?style=for-the-badge)
 
 [![Website: nadinaoates.com](https://img.shields.io/badge/Portfolio-00e0a7?style=for-the-badge&logo=Website)](https://nadinaoates.com)
 [![LinkedIn: nadinaoates](https://img.shields.io/badge/LinkedIn-0a66c2?style=for-the-badge&logo=LinkedIn&logoColor=f5f5f5)](https://linkedin.com/in/nadinaoates)
@@ -13,21 +13,22 @@
 
 
 ## About
-This repo contains an airdrop contract based on merkle proofs. It is part of a tutorial about merkle proofs and signatures.
+This repo contains an airdrop contract based on merkle proofs. It is part of the [Updraft](https://updraft.cyfrin.io/) tutorial about merkle proofs and signatures.
 
 ## Tutorial Notes  
-These are notes from the tuturial about signatures and transaction types
+These are notes from the tuturial about signatures and transaction types:
 
 ### Signatures
 To get signer from encrypted message you need the encrypted message and signature (v, r, and s). Then compared if retrieved signer is the right one. The signature can be concatenated (bytes) or in three components v,r,s (uint8, bytes32, bytes32). The Openzeppelin cryptography library should be use to avoid replay attacks.
 
 #### Signature Standards
 
-**EIP-191**  
+**EIP-191:**  
+EIP-191 defines how a signature is structured:  
 0x19 - version (0x00 - address of intended validator, 0x01 - EIP712, 0x45) - version specific data - message to sign
 
-**EIP-712**  
-EIP-712 structures version specific data
+**EIP-712:**  
+EIP-712 structures version specific data:
 
 - domain separator (version specific data): = hashstruct that defines the structure of the message being signed
 - domain:
@@ -66,7 +67,7 @@ EIP-712 structures version specific data
 
 https://www.cyfrin.io/blog/elliptic-curve-digital-signature-algorithm-and-signatures
 
-#### Transaction Types:
+### Transaction Types:
 
 1. 0x00 Legacy: Transaction before the introduction of transaction types
 2. 0x01 Optional Access Lists (EIP-2930): contains additional access list parameters to restrict transactions between contracts to specific contract addresses and reduces gas savings
